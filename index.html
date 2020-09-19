@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,9 +20,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Work Day Scheduler</title>
   </head>
-
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
@@ -29,126 +30,121 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-    <!--Start of 9am-->
-      <div class="row">
-        <div class="col-md-1">
-          <div class="time1"> 9am </div>  
+    
+    <!--Start-->
+    <br>
+      <div id="9"class="row time">
+        <div class="col-md-2 time">
+          9:00 am 
         </div>
-          <div class="form col-md-10">
-            <textarea class="form-control" id="entry1" rows="3"></textarea>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
           </div>
         <div class="col-md-1">
-          <button type="button" class="btn btn-success" id="saveBtn">Save</button>
+          <button type="button" id="save"class="btn btn-dark saveBtn">Save</button>
         </div>
       </div>
     <br>
-    <!--Start of 10am-->
-    <div class="row">
-      <div class="col-md-1">
-        <div class="time2"> 10am </div>  
-      </div>
-        <div class="form col-md-10">
-          <textarea class="form-control" id="entry2" rows="3"></textarea>
+    <br>
+      <div id="10"class="row time">
+        <div class="col-md-2">
+          10:00 am 
         </div>
-      <div class="col-md-1">
-        <button type="button" class="btn btn-success" id="saveBtn">Save</button>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
       </div>
-    </div>
-  <br>
-  <!--Start of 11am-->
-  <div class="row">
-    <div class="col-md-1">
-      <div class="time3"> 11am </div>  
-    </div>
-      <div class="form col-md-10">
-        <textarea class="form-control" id="entry3" rows="3"></textarea>
+      <br>
+      <div id="11"class="row time">
+        <div class="col-md-2">
+          11:00 am 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
       </div>
-    <div class="col-md-1">
-      <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-    </div>
-  </div>
-<br>
-<!--Start of 12pm-->
-<div class="row">
-  <div class="col-md-1">
-    <div class="time4"> 12pm </div>  
-  </div>
-    <div class="form col-md-10">
-      <textarea class="form-control" id="entry4" rows="3"></textarea>
-    </div>
-  <div class="col-md-1">
-    <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-  </div>
-</div>
-<br>
-<!--Start of 1pm-->
-<div class="row">
-  <div class="col-md-1">
-    <div class="time5"> 1pm </div>  
-  </div>
-    <div class="form col-md-10">
-      <textarea class="form-control" id="entry5" rows="3"></textarea>
-    </div>
-  <div class="col-md-1">
-    <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-  </div>
-</div>
-<br>
-<!--Start of 2pm-->
-<div class="row">
-  <div class="col-md-1">
-    <div class="time6"> 2pm </div>  
-  </div>
-    <div class="form col-md-10">
-      <textarea class="form-control" id="entry6" rows="3"></textarea>
-    </div>
-  <div class="col-md-1">
-    <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-  </div>
-</div>
-<br>
-<!--Start of 3pm-->
-<div class="row">
-  <div class="col-md-1">
-    <div class="time7"> 3pm </div>  
-  </div>
-    <div class="form col-md-10">
-      <textarea class="form-control" id="entry8" rows="3"></textarea>
-    </div>
-  <div class="col-md-1">
-    <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-  </div>
-</div>
-<br>
-<!--Start of 4pm-->
-<div class="row">
-  <div class="col-md-1">
-    <div class="time9"> 4pm </div>  
-  </div>
-    <div class="form col-md-10">
-      <textarea class="form-control" id="entry9" rows="3"></textarea>
-    </div>
-  <div class="col-md-1">
-    <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-  </div>
-</div>
-<br>
-<!--Start of 5pm-->
-<div class="row">
-  <div class="col-md-1">
-    <div class="time10"> 5pm </div>  
-  </div>
-    <div class="form col-md-10">
-      <textarea class="form-control" id="entry10" rows="3"></textarea>
-    </div>
-  <div class="col-md-1">
-    <button type="button" class="btn btn-success" id="saveBtn">Save</button>
-  </div>
-</div>
-<br>
+      <br>
+      <div id="12"class="row time">
+        <div class="col-md-2">
+          12:00 pm 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
+      </div>
+      <br>
+      <div id="13"class="row time">
+        <div class="col-md-2">
+          1:00 pm 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
+      </div>
+      <br>
+      <div id="14"class="row time">
+        <div class="col-md-2">
+          2:00 pm 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
+      </div> 
+      <br>
+      <div id="15"class="row time">
+        <div class="col-md-2">
+          3:00 pm 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
+      </div>
+      <br>
+      <div id="16"class="row time">
+        <div class="col-md-2">
+          4:00 pm 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
+      </div>
+      <br>
+      <div id="17"class="row time">
+        <div class="col-md-2">
+          5:00 pm 
+        </div>
+          <div class="col-md-9">
+            <textarea class="form-control task" id="task" rows="3"></textarea>
+          </div>
+        <div class="col-md-1">
+          <button type="button" id="save" class="btn btn-dark saveBtn">Save</button>
+        </div>
+      </div>
     </div> <!--End of container-->
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> <!--Jquery-->
+    <!--Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
   </body>
 </html>
